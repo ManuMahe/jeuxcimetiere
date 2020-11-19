@@ -166,4 +166,22 @@ h3 {
 .adminJeux {
   width: 60%;
 }
+
+.titreIndex {
+  background-color: #17A2B8;
+}
+
+.titreIndex h2 {
+  font-size: 250%;
+  -webkit-text-stroke: white 1px;
+  font-weight: bold;
+  text-shadow: 0px 5px 20px lightblue;
+}
+
+.jeuIndex {
+  height: 300px;
+  min-width: 300px;
+  background-size: cover;
+  background-position: center;
+}
 /*# sourceMappingURL=styles.css.map */

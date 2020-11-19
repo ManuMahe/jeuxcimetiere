@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +13,63 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
+
 <body>
     <?php
-        include 'structures/header.php';
+    include 'structures/header.php';
     ?>
     <main>
-        <div class="row">
-            
+
+        <div class="row barrenav titreIndex">
+            <h2 class="">Les différents jeux</h2>
+        </div>
+        <div class="row barrenav">
+
+        </div>
+        <div class="barrenav">
+            <div class="container">
+                <?php
+                try {
+                    $pdo = new PDO('mysql:host=localhost;dbname=jeux_cimetiere;port=3306', 'root', '');
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+                    $sth = $pdo->prepare("SELECT * FROM jeu");
+                    $sth->execute();
+
+
+                    $resultat = $sth->fetchAll();
+
+
+                    foreach ($resultat as $key => $value) {
+                ?>
+
+                        <div class="row">
+                            <div class="col-md-6 jeuIndex" style="background-image: url(<?php echo $value['image_jeu']; ?>);">
+                                <a></a>
+                            </div>
+                            <div class="col-md-6 caracIndex">
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value['nbre_joueurs']; ?> joueur(s)</li>
+                                    <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value['duree_jeu']; ?> minutes</li>
+                                    <li class="list-group-item list-group-item-action list-group-item-info">
+                                        <h4><?php echo $value['prix_jeu']; ?> €</h4>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+
+                <?php
+
+                    }
+                } catch (PDOException $e) {
+                    echo "Erreur : " . $e->getMessage();
+                }
+                ?>
+            </div>
         </div>
     </main>
 
@@ -31,4 +82,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
 </body>
+
 </html>

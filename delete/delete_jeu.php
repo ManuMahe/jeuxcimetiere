@@ -34,7 +34,7 @@
 	               echo "Erreur : " . $e->getMessage();
                }
                
-// header("location: ../administration.php")
+header("location: ../administration.php")
 ?>
 
 

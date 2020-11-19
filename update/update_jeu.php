@@ -33,7 +33,7 @@
     ?>
 
             <div class="row barrenav">
-                <form class="formulaire formJeu" action="../traitement/traitement_jeu.php" method="post" enctype="multipart/form-data">
+                <form class="formulaire formJeu" action="update_jeu_traitement.php" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-5 flexForm">
                             <h2>Modifier un jeu</h2>

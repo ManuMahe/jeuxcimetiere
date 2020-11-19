@@ -31,7 +31,8 @@
             }
         }
 
-header("location: index.php");
+// header("location: ../administration.php");
+
 ?>
 
 
