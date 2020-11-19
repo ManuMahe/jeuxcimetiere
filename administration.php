@@ -98,6 +98,7 @@
                     <div class="col-md-1"></div>
                 </div>
             </form>
+            <br/>
         </div>
         <div class="row listeType">
             <div class="table-reponsive-md tableType">
