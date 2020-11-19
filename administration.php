@@ -120,7 +120,18 @@
                             foreach ($resultat1 as $key1 => $value1) {
                         ?>
 
-                                <td scope="col" class="table-dark"><?php echo $value1['nom_type'] ?></td>
+                                <td scope="col" class="table-dark">
+                                    <?php echo $value1['nom_type'] ?>
+                                    <form action="update/update_type.php" method="get">
+                                        <input type="hidden" name="id_type" value="<?php echo $value1['id_type']; ?>">
+                                        <input name="modifier" type="submit" class="btn btn-info btn-sm btn-block" value="Modifier">
+                                    </form>
+                                
+                                    <form action="delete/delete_type.php" method="get">
+                                        <input type="hidden" name="id_type" value="<?php echo $value1['id_type']; ?>">
+                                        <input name="supprimer" type="submit" class="btn btn-info btn-sm btn-block" value="Supprimer">
+                                    </form>
+                                </td>
                         <?php
 
                             }
@@ -163,7 +174,7 @@
                                         <input type="hidden" name="id_jeu" value="<?php echo $value3['id_jeu']; ?>">
                                         <input name="modifier" type="submit" class="btn btn-info btn-block" value="Modifier">
                                     </form>
-                                    <br/>
+                                    <br />
                                     <form action="delete/delete_jeu.php" method="get">
                                         <input type="hidden" name="id_jeu" value="<?php echo $value3['id_jeu']; ?>">
                                         <input name="supprimer" type="submit" class="btn btn-info btn-block" value="Supprimer">

@@ -35,7 +35,7 @@
 <div class="row barrenav">
             <form class="formulaire formType" action="../traitement/traitement_type.php" method="post">
                 <div class="row">
-                    <label class="col-md-4 nouveauType" for="nom_type">Ajouter un nouveau type de jeu</label>
+                    <label class="col-md-4 nouveauType" for="nom_type">Modifier un type de jeu</label>
                     <input type="text" class="form-control col-md-4" id="nom_type" name="nom_type" required placeholder="Type" value="<?php echo $value['nom_type'] ?>">
                     <div class="col-md-1"></div>
                     <input name="modifier" type="submit" class="btn btn-info col-md-2" value="Modifier">

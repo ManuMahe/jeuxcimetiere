@@ -24,7 +24,9 @@
             <h2 class="">Les différents jeux</h2>
         </div>
         <div class="row barrenav">
-
+            <?php 
+                include 'selecteur.php';
+            ?>
         </div>
         <div class="barrenav">
             <div class="container">
@@ -34,7 +36,7 @@
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-                    $sth = $pdo->prepare("SELECT * FROM jeu");
+                    $sth = $pdo->prepare("SELECT * FROM jeu INNER JOIN type_jeu ON jeu.type_id=type_jeu.id_type");
                     $sth->execute();
 
 
@@ -44,14 +46,18 @@
                     foreach ($resultat as $key => $value) {
                 ?>
 
-                        <div class="row">
-                            <div class="col-md-6 jeuIndex" style="background-image: url(<?php echo $value['image_jeu']; ?>);">
-                                <a></a>
+                        <div class="row listJeu">
+                            <div class="col-md-4">
+                                <div class="jeuIndex" style="background-image: url(<?php echo $value['image_jeu']; ?>);">
+                                </div>
+
                             </div>
-                            <div class="col-md-6 caracIndex">
+                            <div class="col-md-8 caracIndex">
+                            <a><h3><?php echo $value['nom_jeu']; ?></h3></a>
                                 <ul class="list-group">
                                     <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value['nbre_joueurs']; ?> joueur(s)</li>
                                     <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value['duree_jeu']; ?> minutes</li>
+                                    <li class="list-group-item list-group-item-action list-group-item-info">Jeu de <?php echo $value['nom_type']; ?></li>
                                     <li class="list-group-item list-group-item-action list-group-item-info">
                                         <h4><?php echo $value['prix_jeu']; ?> €</h4>
                                     </li>
@@ -72,7 +78,9 @@
             </div>
         </div>
     </main>
-
+    <?php
+    include 'structures/footer.php';
+    ?>
 
 
 

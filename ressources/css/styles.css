@@ -48,6 +48,12 @@ input {
   font-family: 'Nightmare', sans-serif;
   font-size: 800%;
   text-shadow: lightblue 0px 5px 5px;
+  -webkit-transition: 2s ease;
+  transition: 2s ease;
+}
+
+.titreInscription:hover {
+  text-shadow: lightblue 0px 10px 10px;
 }
 
 .barrenav {
@@ -83,6 +89,13 @@ input {
   font-size: 2000%;
   text-shadow: 0px 5px 20px lightseagreen;
   -webkit-text-stroke: 1px white;
+  -webkit-transition: 2s ease;
+  transition: 2s ease;
+}
+
+.fondHeader h1:hover {
+  text-shadow: 0px 10px 30px lightseagreen;
+  -webkit-text-stroke: 2px white;
 }
 
 .formJeu {
@@ -157,10 +170,9 @@ input {
 
 h3 {
   text-align: center;
-  font-size: 200%;
-  text-shadow: 0px 5px 20px lightseagreen;
-  -webkit-text-stroke: 1px white;
-  width: 400px;
+  border: #17A2B8 1px solid;
+  border-radius: 5px;
+  background-color: rgba(173, 216, 230, 0.7);
 }
 
 .adminJeux {
@@ -178,10 +190,55 @@ h3 {
   text-shadow: 0px 5px 20px lightblue;
 }
 
+.listJeu {
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid lightblue;
+  border-radius: 10px;
+}
+
+.listJeu img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.listJeu:hover {
+  background-color: whitesmoke;
+  -webkit-box-shadow: lightblue 0px 3px 10px inset;
+          box-shadow: lightblue 0px 3px 10px inset;
+}
+
 .jeuIndex {
   height: 300px;
-  min-width: 300px;
+  width: 300px;
   background-size: cover;
   background-position: center;
+}
+
+.caracIndex a {
+  margin: 10px;
+  text-align: center;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.caracIndex a h3:hover {
+  border: cyan 1px solid;
+  color: cyan;
+  background-image: url(../images/gifHover.gif);
+  background-size: cover;
+  background-position: center;
+  -webkit-box-shadow: lightblue 0px 3px 5px inset;
+          box-shadow: lightblue 0px 3px 5px inset;
+}
+
+footer {
+  width: 100%;
+  height: 600px;
+  background-image: url(../images/footerFond.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 /*# sourceMappingURL=styles.css.map */
