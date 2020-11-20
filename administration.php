@@ -15,13 +15,13 @@
 </head>
 
 <body>
-
+    <?php session_start(); ?>
     <main>
         <div class="row">
             <div class="col-sm-3 barrenav">
                 <a class="btn btn-info btn-block" href="index.php">Revenir à la page principale</a>
             </div>
-            <div class="col barrenav"></div>
+            <div class="col barrenav bonjour"> <img class="imgUtilisateur" src="<?php echo $_SESSION['image_utilisateur'];?>"> Bonjour <?php echo $_SESSION['prenom_utilisateur']; ?>, quels sont vos ordres ? </div>
         </div>
         <div class="row ensemble">
             <form class="formulaire formJeu" action="traitement/traitement_jeu.php" method="post" enctype="multipart/form-data">

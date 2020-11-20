@@ -25,57 +25,13 @@
         </div>
         <div class="row barrenav">
             <?php 
-                include 'selecteur.php';
+                include 'structures/selecteur.php';
             ?>
         </div>
-        <div class="barrenav">
-            <div class="container">
-                <?php
-                try {
-                    $pdo = new PDO('mysql:host=localhost;dbname=jeux_cimetiere;port=3306', 'root', '');
-                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-                    $sth = $pdo->prepare("SELECT * FROM jeu INNER JOIN type_jeu ON jeu.type_id=type_jeu.id_type");
-                    $sth->execute();
-
-
-                    $resultat = $sth->fetchAll();
-
-
-                    foreach ($resultat as $key => $value) {
-                ?>
-
-                        <div class="row listJeu">
-                            <div class="col-md-4">
-                                <div class="jeuIndex" style="background-image: url(<?php echo $value['image_jeu']; ?>);">
-                                </div>
-
-                            </div>
-                            <div class="col-md-8 caracIndex">
-                            <a><h3><?php echo $value['nom_jeu']; ?></h3></a>
-                                <ul class="list-group">
-                                    <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value['nbre_joueurs']; ?> joueur(s)</li>
-                                    <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value['duree_jeu']; ?> minutes</li>
-                                    <li class="list-group-item list-group-item-action list-group-item-info">Jeu de <?php echo $value['nom_type']; ?></li>
-                                    <li class="list-group-item list-group-item-action list-group-item-info">
-                                        <h4><?php echo $value['prix_jeu']; ?> €</h4>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-
-
-                <?php
-
-                    }
-                } catch (PDOException $e) {
-                    echo "Erreur : " . $e->getMessage();
-                }
-                ?>
-            </div>
+        <div class="barrenav mainGrad">
+            <?php
+                include 'structures/main.php';
+            ?>
         </div>
     </main>
     <?php

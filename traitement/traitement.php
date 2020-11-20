@@ -8,6 +8,7 @@
                 $req = $pdo->prepare('SELECT * FROM utilisateur WHERE courriel_utilisateur = :courriel_utilisateur');
                 $req->execute(array(
                     'courriel_utilisateur' => $_POST['courriel_utilisateur']
+
                 ));
 
                 $resultat = $req->fetchall();
@@ -23,8 +24,12 @@
                         if ($isPasswordCorrect) {
                             session_start();
                             $_SESSION['id_utilisateur'] = $value['id_utilisateur'];
-                            $_SESSION['courriel_utilisateur'] = $courriel_utilisateur;
-                            header("location: administration.php");
+                            $_SESSION['courriel_utilisateur'] = $value['courriel_utilisateur'];
+                            $_SESSION['nom_utilisateur'] = $value['nom_utilisateur'];
+                            $_SESSION['prenom_utilisateur'] = $value['prenom_utilisateur'];
+                            $_SESSION['image_utilisateur'] = $value['image_utilisateur'];
+                            
+                            header("location: ../administration.php");
                         } else {
                             echo 'Mauvais courriel ou mot de passe ! 2';
                         }

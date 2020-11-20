@@ -5,7 +5,7 @@
             <a class="btn btn-info btn-block" href="inscription.php">S'incrire</a>
         </div>
         <div class="col-sm-5 barrenav">
-            <form class="formulaire formHeader" action="traitement.php" method="post">
+            <form class="formulaire formHeader" action="traitement/traitement.php" method="post">
                 <div class="row">
                     <div class="col">
                         <input type="text" class="form-control" name="courriel_utilisateur" required placeholder="Votre Courriel">
