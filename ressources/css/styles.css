@@ -3,6 +3,10 @@
   src: url("../fonts/Nightmare 5.ttf");
 }
 
+a {
+  text-decoration: none;
+}
+
 .bodyInscription {
   background-image: url(../images/fondInscription.jpg);
 }
@@ -307,5 +311,14 @@ footer {
 .mention h4 {
   margin-top: 50px;
   color: lightblue;
+}
+
+@media screen and (max-width: 1280px) {
+  .titreInscription {
+    font-size: 400%;
+  }
+  .fondHeader h1 {
+    font-size: 1000%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

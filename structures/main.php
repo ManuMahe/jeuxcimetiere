@@ -23,7 +23,7 @@
             
                                         </div>
                                         <div class="col-md-8 caracIndex">
-                                        <a><h3><?php echo $value1['nom_jeu']; ?></h3></a>
+                                        <a href="jeu.php?id_jeu=<?php echo $value1['id_jeu'];?>"><h3><?php echo $value1['nom_jeu']; ?></h3></a>
                                             <ul class="list-group">
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value1['nbre_joueurs']; ?> joueur(s)</li>
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value1['duree_jeu']; ?> minutes</li>
@@ -68,7 +68,7 @@
             
                                         </div>
                                         <div class="col-md-8 caracIndex">
-                                        <a><h3><?php echo $value2['nom_jeu']; ?></h3></a>
+                                        <a href="jeu.php?id_jeu=<?php echo $value2['id_jeu'];?>"><h3><?php echo $value2['nom_jeu']; ?></h3></a>
                                             <ul class="list-group">
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value2['nbre_joueurs']; ?> joueur(s)</li>
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value2['duree_jeu']; ?> minutes</li>
@@ -113,7 +113,7 @@
             
                                         </div>
                                         <div class="col-md-8 caracIndex">
-                                        <a><h3><?php echo $value3['nom_jeu']; ?></h3></a>
+                                        <a href="jeu.php?id_jeu=<?php echo $value3['id_jeu'];?>"><h3><?php echo $value3['nom_jeu']; ?></h3></a>
                                             <ul class="list-group">
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value3['nbre_joueurs']; ?> joueur(s)</li>
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value3['duree_jeu']; ?> minutes</li>
@@ -136,13 +136,13 @@
                         echo "Erreur : " . $e->getMessage();
                     }
                     }
-                    elseif (!empty($_GET['nom_type'])) {
+                    elseif (!empty($_GET['id_type'])) {
                         try {
                             $pdo = new PDO('mysql:host=localhost;dbname=jeux_cimetiere;port=3306', 'root', '');
                             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         
-                            $sth4 = $pdo->prepare("SELECT * FROM type_jeu INNER JOIN jeu ON jeu.type_id=type_jeu.id_type WHERE nom_type = $_GET[nom_type]");
+                            $sth4 = $pdo->prepare("SELECT * FROM type_jeu INNER JOIN jeu ON jeu.type_id=type_jeu.id_type WHERE id_type = $_GET[id_type]");
                             $sth4->execute();
         
         
@@ -158,7 +158,7 @@
             
                                         </div>
                                         <div class="col-md-8 caracIndex">
-                                        <a><h3><?php echo $value4['nom_jeu']; ?></h3></a>
+                                        <a href="jeu.php?id_jeu=<?php echo $value4['id_jeu'];?>"><h3><?php echo $value4['nom_jeu']; ?></h3></a>
                                             <ul class="list-group">
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value4['nbre_joueurs']; ?> joueur(s)</li>
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value4['duree_jeu']; ?> minutes</li>
@@ -204,7 +204,7 @@
             
                                         </div>
                                         <div class="col-md-8 caracIndex">
-                                        <a><h3><?php echo $value['nom_jeu']; ?></h3></a>
+                                        <a href="jeu.php?id_jeu=<?php echo $value['id_jeu'];?>"><h3><?php echo $value['nom_jeu']; ?></h3></a>
                                             <ul class="list-group">
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value['nbre_joueurs']; ?> joueur(s)</li>
                                                 <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value['duree_jeu']; ?> minutes</li>

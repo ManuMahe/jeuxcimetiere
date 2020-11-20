@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <?php
     include 'structures/header.php';
     ?>
@@ -33,30 +34,32 @@
 
             foreach ($resultat as $key => $value) {
         ?>
+                <div class="container">
+                    <div class="row listJeu">
+                        <div class="col-md-4">
+                            <div class="jeuIndex" style="background-image: url(<?php echo $value['image_jeu']; ?>);">
+                            </div>
 
-                <div class="row listJeu">
-                    <div class="col-md-4">
-                        <div class="jeuIndex" style="background-image: url(<?php echo $value1['image_jeu']; ?>);">
                         </div>
+                        <div class="col-md-8 caracIndex">
 
-                    </div>
-                    <div class="col-md-8 caracIndex">
-                        <a>
                             <h3><?php echo $value['nom_jeu']; ?></h3>
-                        </a>
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value['nbre_joueurs']; ?> joueur(s)</li>
-                            <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value['duree_jeu']; ?> minutes</li>
-                            <li class="list-group-item list-group-item-action list-group-item-info">Jeu de <?php echo $value['nom_type']; ?></li>
-                            <li class="list-group-item list-group-item-action list-group-item-info">
-                                <h4><?php echo $value['prix_jeu']; ?> €</h4>
-                            </li>
-                        </ul>
+
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-action list-group-item-info">Pour <?php echo $value['nbre_joueurs']; ?> joueur(s)</li>
+                                <li class="list-group-item list-group-item-action list-group-item-info">Durée d'une partie : <?php echo $value['duree_jeu']; ?> minutes</li>
+                                <li class="list-group-item list-group-item-action list-group-item-info">Jeu de <?php echo $value['nom_type']; ?></li>
+                                <li class="list-group-item list-group-item-action list-group-item-info">
+                                    <h4><?php echo $value['prix_jeu']; ?> €</h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="list-group-item list-group-item-action list-group-item-info col-md-12"><?php echo $value['description_jeu']; ?></p>
                     </div>
                 </div>
-                <div class="row">
-                    <p class="list-group-item list-group-item-action list-group-item-info col-md-12"><?php echo $value['description_jeu'];?></p>
-                </div>
+
 
 
 
@@ -67,7 +70,13 @@
             echo "Erreur : " . $e->getMessage();
         }
         ?>
-
+        <div class="row">
+            <div class="col-sm-4 barrenav"></div>
+                <div class="col-sm-4 barrenav">
+                    <a class="btn btn-info btn-block" href="index.php">Revenir à la page principale</a>
+                </div>
+                <div class="col barrenav"></div>
+            </div>
 
 
 
